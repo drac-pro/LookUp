@@ -7,8 +7,11 @@ from wtforms.validators import DataRequired, Email, EqualTo, Length
 
 class RegistrationForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
-    password = PasswordField('Password', validators=[DataRequired(), Length(min=6)])
-    confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), EqualTo('password')])
+    password = PasswordField('Password',
+                             validators=[DataRequired(), Length(min=6)])
+    confirm_password = PasswordField('Confirm Password',
+                                     validators=[DataRequired(),
+                                                 EqualTo('password')])
     first_name = StringField('First Name')
     last_name = StringField('Last Name')
     phone = StringField('Phone')
@@ -32,5 +35,6 @@ class BusinessForm(FlaskForm):
     zip_code = StringField('Zip Code', validators=[DataRequired()])
     latitude = FloatField('Latitude')
     longitude = FloatField('Longitude')
-    services = StringField('Services (comma separated)', validators=[DataRequired()])
+    services = StringField('Services (comma separated)',
+                           validators=[DataRequired()])
     submit = SubmitField('Create Business')
