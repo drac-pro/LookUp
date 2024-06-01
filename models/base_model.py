@@ -2,7 +2,7 @@
 """Defines a Class base_model which will be inherited by other classes"""
 import models
 import uuid
-from datatime import datetime
+from datetime import datetime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, String, DateTime
 
