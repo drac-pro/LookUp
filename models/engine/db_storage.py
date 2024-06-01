@@ -68,7 +68,7 @@ class DBStorage:
 
     def get_user_by_email(self, email):
         """Get a user by their email"""
-        return self.__session.query(BusinessUser).get(email)
+        return self.__session.query(BusinessUser).filter_by(email=email).one()
 
     def get_user_by_id(self, user_id):
         return self.__session.query(BusinessUser).get(user_id)
