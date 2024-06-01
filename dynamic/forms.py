@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """forms for my web application"""
 from flask_wtf import FlaskForm
+from models import storage
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 
@@ -16,6 +17,12 @@ class RegistrationForm(FlaskForm):
     last_name = StringField('Last Name')
     phone = StringField('Phone')
     submit = SubmitField('Sign Up')
+
+    def validate_email(self, email):
+        """validates if email is already used by another user"""
+        user = storage.get_user_by_email(email.data)
+        if user:
+            raise ValidationError('email already in use')
 
 
 class LoginForm(FlaskForm):
