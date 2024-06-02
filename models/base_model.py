@@ -48,7 +48,7 @@ class BaseModel:
         self.storage.new(self)
         self.storage.save()
 
-    def to_dict(self, save_fs=None):
+    def to_dict(self, save_pw=None):
         """return the dictionary of the object"""
         new_dict = self.__dict__.copy()
         new_dict['created_at'] = self.created_at.isoformat()
@@ -56,6 +56,9 @@ class BaseModel:
         new_dict['__class__'] = self.__class__.__name__
         if '_sa_instance_state' in new_dict:
             del new_dict['_sa_instance_state']
+        if save_pw is None:
+            if "password_hash" in new_dict:
+                del new_dict["password_hash"]
         return new_dict
 
     def delete(self):
