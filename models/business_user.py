@@ -14,7 +14,7 @@ class BusinessUser(BaseModel, Base):
     last_name = Column(String(128), nullable=False)
     email = Column(String(128), nullable=False, unique=True)
     phone = Column(String(20), nullable=True)
-    password_hash = Column(String(128), nullable=False)
+    password_hash = Column(String(162), nullable=False)
 
     businesses = relationship('Business', backref='owner',
                               cascade='all, delete, delete-orphan')
