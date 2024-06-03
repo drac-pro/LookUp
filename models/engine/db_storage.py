@@ -10,6 +10,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 
 
+classes = [BusinessUser, Business, Service, Location]
+
+
 class DBStorage:
     """Creates connection with mysql database"""
     __engine = None
@@ -34,9 +37,9 @@ class DBStorage:
         if cls:
             objs = self.__session.query(cls).all()
         else:
-            classes = [BusinessUser, Business, Service, Location]
+            objs = []
             for cls in classes:
-                objs = self.__session.query(cls).all()
+                objs.extend(self.__session.query(cls).all())
         for obj in objs:
             key = obj.__class__.__name__ + '.' + obj.id
             result[key] = obj
@@ -64,7 +67,7 @@ class DBStorage:
 
     def close(self):
         """closes the current session by calling remove on it"""
-        self.__session.remove()
+        self.__session.close()
 
     def get_user_by_email(self, email):
         """Get a user by their email"""
@@ -72,3 +75,10 @@ class DBStorage:
 
     def get_user_by_id(self, user_id):
         return self.__session.query(BusinessUser).get(user_id)
+
+    def count(self, cls=None):
+        """count the number of objects in storage"""
+        if cls and cls in classes:
+            return len(self.all(cls))
+        else:
+            return len(self.all())

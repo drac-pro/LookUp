@@ -11,7 +11,7 @@ class Business(BaseModel, Base):
 
     name = Column(String(128), nullable=False)
     description = Column(String(1024), nullable=True)
-    business_user_id = Column(String(60), ForeignKey('business_user.id'),
+    business_user_id = Column(String(60), ForeignKey('business_users.id'),
                               nullable=False)
     location_id = Column(String(60), ForeignKey('locations.id'),
                          nullable=False)
