@@ -14,8 +14,6 @@ class Location(BaseModel, Base):
     state = Column(String(128), nullable=False)
     country = Column(String(128), nullable=False)
     zip_code = Column(String(20), nullable=False)
-    latitude = Column(Float, nullable=False)
-    longitude = Column(Float, nullable=False)
 
     businesses = relationship('Business', backref='location',
                               cascade='all, delete, delete-orphan')

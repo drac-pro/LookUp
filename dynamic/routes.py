@@ -27,17 +27,38 @@ def register():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = RegistrationForm()
-    if form.validate_on_submit():
+    form1 = BusinessForm()
+    if form.validate_on_submit() and form1.validate_on_submit():
         user = BusinessUser(email=form.email.data,
                             password=form.password.data,
                             first_name=form.first_name.data,
                             last_name=form.last_name.data,
                             phone=form.phone.data)
         storage.new(user)
+
+        location = Location(address=form1.address.data,
+                            city=form1.city.data,
+                            state=form1.state.data,
+                            country=form1.country.data,
+                            zip_code=form1.zip_code.data)
+        storage.new(location)
+
+        business = Business(name=form1.name.data,
+                            description=form1.description.data,
+                            business_user_id=user.id,
+                            location_id=location.id)
+        storage.new(business)
+
+        service = Service(name=form1.name.data,
+                          description=form1.description.data,
+                          business_id=business.id)
+        storage.new(service)
+
         storage.save()
         flash('Account created successfully', 'success')
         return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
+    return render_template('register.html', title='Register',
+                           form=form, form1=form1)
 
 
 @app.route('/login', methods=['GET', 'POST'])
