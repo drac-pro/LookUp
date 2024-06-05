@@ -99,119 +99,119 @@
                 <div class="card-body" style="background-color: #030352;">
                     <form>
                         <div class="form-group">
-                            {{ form.name.label(class="form-control-label") }}
+                            {{ form1.name.label(class="form-control-label") }}
                             
-                            {% if form.name.errors %}
-                                {{ form.name(class="form-control form-control-lg is-invalid") }}
+                            {% if form1.name.errors %}
+                                {{ form1.name(class="form-control form-control-lg is-invalid") }}
                                 <div class="invalid-feedback">
-                                    {% for error in form.name.errors %}
+                                    {% for error in form1.name.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
                                 </div>
                             {% else %}
-                                {{ form.name(class="form-control form-control-lg") }}
+                                {{ form1.name(class="form-control form-control-lg") }}
                             {% endif %}
                         </div>
                         <div class="form-group">
-                            {{ form.description.label(class="form-control-label") }}
+                            {{ form1.description.label(class="form-control-label") }}
                             
-                            {% if form.description.errors %}
-                                {{ form.description(class="form-control form-control-lg is-invalid") }}
+                            {% if form1.description.errors %}
+                                {{ form1.description(class="form-control form-control-lg is-invalid") }}
                                 <div class="invalid-feedback">
-                                    {% for error in form.description.errors %}
+                                    {% for error in form1.description.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
                                 </div>
                             {% else %}
-                                {{ form.description(class="form-control form-control-lg") }}
+                                {{ form1.description(class="form-control form-control-lg") }}
                             {% endif %}
                         </div>
                         <div class="form-group">
-                            {{ form.address.label(class="form-control-label") }}
+                            {{ form1.address.label(class="form-control-label") }}
                             
-                            {% if form.address.errors %}
-                                {{ form.address(class="form-control form-control-lg is-invalid") }}
+                            {% if form1.address.errors %}
+                                {{ form1.address(class="form-control form-control-lg is-invalid") }}
                                 <div class="invalid-feedback">
-                                    {% for error in form.address.errors %}
+                                    {% for error in form1.address.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
                                 </div>
                             {% else %}
-                                {{ form.address(class="form-control form-control-lg") }}
+                                {{ form1.address(class="form-control form-control-lg") }}
                             {% endif %}
                         </div>
                         <div class="form-group">
-                            {{ form.city.label(class="form-control-label") }}
+                            {{ form1.city.label(class="form-control-label") }}
                             
-                            {% if form.city.errors %}
-                                {{ form.city(class="form-control form-control-lg is-invalid") }}
+                            {% if form1.city.errors %}
+                                {{ form1.city(class="form-control form-control-lg is-invalid") }}
                                 <div class="invalid-feedback">
-                                    {% for error in form.city.errors %}
+                                    {% for error in form1.city.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
                                 </div>
                             {% else %}
-                                {{ form.city(class="form-control form-control-lg") }}
+                                {{ form1.city(class="form-control form-control-lg") }}
                             {% endif %}
                         </div>
                         <div class="form-group">
-                            {{ form.state.label(class="form-control-label") }}
+                            {{ form1.state.label(class="form-control-label") }}
                             
-                            {% if form.state.errors %}
-                                {{ form.state(class="form-control form-control-lg is-invalid") }}
+                            {% if form1.state.errors %}
+                                {{ form1.state(class="form-control form-control-lg is-invalid") }}
                                 <div class="invalid-feedback">
-                                    {% for error in form.state.errors %}
+                                    {% for error in form1.state.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
                                 </div>
                             {% else %}
-                                {{ form.state(class="form-control form-control-lg") }}
+                                {{ form1.state(class="form-control form-control-lg") }}
                             {% endif %}
                         </div>
                         <div class="form-group">
-                            {{ form.country.label(class="form-control-label") }}
+                            {{ form1.country.label(class="form-control-label") }}
                             
-                            {% if form.country.errors %}
-                                {{ form.country(class="form-control form-control-lg is-invalid") }}
+                            {% if form1.country.errors %}
+                                {{ form1.country(class="form-control form-control-lg is-invalid") }}
                                 <div class="invalid-feedback">
-                                    {% for error in form.country.errors %}
+                                    {% for error in form1.country.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
                                 </div>
                             {% else %}
-                                {{ form.country(class="form-control form-control-lg") }}
+                                {{ form1.country(class="form-control form-control-lg") }}
                             {% endif %}
                         </div>
                         <div class="form-group">
-                            {{ form.zip_code.label(class="form-control-label") }}
+                            {{ form1.zip_code.label(class="form-control-label") }}
                             
-                            {% if form.zip_code.errors %}
-                                {{ form.zip_code(class="form-control form-control-lg is-invalid") }}
+                            {% if form1.zip_code.errors %}
+                                {{ form1.zip_code(class="form-control form-control-lg is-invalid") }}
                                 <div class="invalid-feedback">
-                                    {% for error in form.zip_code.errors %}
+                                    {% for error in form1.zip_code.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
                                 </div>
                             {% else %}
-                                {{ form.zip_code(class="form-control form-control-lg") }}
+                                {{ form1.zip_code(class="form-control form-control-lg") }}
                             {% endif %}
                         </div>
                         <div class="form-group">
-                            {{ form.services.label(class="form-control-label") }}
+                            {{ form1.services.label(class="form-control-label") }}
                             
-                            {% if form.services.errors %}
-                                {{ form.services(class="form-control form-control-lg is-invalid") }}
+                            {% if form1.services.errors %}
+                                {{ form1.services(class="form-control form-control-lg is-invalid") }}
                                 <div class="invalid-feedback">
-                                    {% for error in form.services.errors %}
+                                    {% for error in form1.services.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
                                 </div>
                             {% else %}
-                                {{ form.services(class="form-control form-control-lg") }}
+                                {{ form1.services(class="form-control form-control-lg") }}
                             {% endif %}
                         </div>
                         <div class="form-group">
-                            {{ form.submit(class="btn btn-outline-info") }}
+                            {{ form1.submit(class="btn btn-outline-info") }}
                         </div>
                     </form>
                 </div>
