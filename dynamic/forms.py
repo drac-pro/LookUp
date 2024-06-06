@@ -5,7 +5,8 @@ from flask_wtf.file import FileField, FileAllowed
 from models import storage
 from wtforms import (StringField, PasswordField, SubmitField,
                      BooleanField, TextAreaField, FloatField)
-from wtforms.validators import DataRequired, Email, EqualTo, Length
+from wtforms.validators import (DataRequired, Email, EqualTo, Length,
+                                ValidationError)
 from flask_login import current_user
 
 
@@ -60,8 +61,8 @@ class BusinessForm(FlaskForm):
     state = StringField('State', validators=[DataRequired()])
     country = StringField('Country', validators=[DataRequired()])
     zip_code = StringField('Zip Code', validators=[DataRequired()])
-    latitude = FloatField('Latitude', validators=[DataRequired()])
-    longitude = FloatField('Longitude', validators=[DataRequired()])
     services = StringField('Services (comma separated)',
                            validators=[DataRequired()])
+    servicedescription = TextAreaField('Descript Your Service',
+                                       validators=[DataRequired()])
     submit = SubmitField('Create Business')

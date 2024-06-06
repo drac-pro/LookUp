@@ -27,17 +27,39 @@ def register():
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = RegistrationForm()
-    if form.validate_on_submit():
+    form1 = BusinessForm()
+    if form.validate_on_submit() and form1.validate_on_submit():
         user = BusinessUser(email=form.email.data,
                             password=form.password.data,
                             first_name=form.first_name.data,
                             last_name=form.last_name.data,
                             phone=form.phone.data)
         storage.new(user)
+
+        location = Location(address=form1.address.data,
+                            city=form1.city.data,
+                            state=form1.state.data,
+                            country=form1.country.data,
+                            zip_code=form1.zip_code.data)
+        storage.new(location)
+
+        business = Business(name=form1.name.data,
+                            description=form1.description.data,
+                            business_user_id=user.id,
+                            location_id=location.id)
+        storage.new(business)
+
+        service = Service(name=form1.name.data,
+                          description=form1.servicedescription.data,
+                          business_id=business.id)
+        storage.new(service)
+
         storage.save()
         flash('Account created successfully', 'success')
         return redirect(url_for('login'))
-    return render_template('register.html', title='Register', form=form)
+
+    return render_template('register.html', title='Register',
+                           form=form, form1=form1)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -52,8 +74,10 @@ def login():
             next_page = request.args.get('next')
             return redirect(next_page) if next_page\
                 else redirect(url_for('account'))
-        flash('Login Unsuccessful. Please check email and password', 'danger')
-    return render_template('login.html', form=form)
+        else:
+            flash('Login Unsuccessful. Please check email and password',
+                  'danger')
+    return render_template('login.html', form=form, title='Login')
 
 
 @app.route('/logout')
@@ -74,6 +98,13 @@ def save_picture(form_picture):
     i = Image.open(form_picture)
     i.thumbnail(output_size)
     i.save(picture_path)
+
+    # delete old profile picture
+    old_pic = os.path.join(app.root_path, 'static/profile_pics',
+                           current_user.profile_pic)
+    if os.path.exists(old_pic) and current_user.profile_pic != 'default.jpg':
+        os.remove(old_pic)
+
     return picture_fn
 
 
@@ -98,7 +129,7 @@ def account():
         form.email.data = current_user.email
         form.phone.data = current_user.phone
     profile_pic = url_for('static',
-                          filename='profile_pic/' + current_user.profile_pic)
+                          filename='profile_pics/' + current_user.profile_pic)
     return render_template('account.html', title='Account',
                            profile_pic=profile_pic, form=form)
 
