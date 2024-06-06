@@ -45,8 +45,8 @@ class BaseModel:
     def save(self):
         """save changes to made to an object"""
         self.updated_at = datetime.utcnow()
-        self.storage.new(self)
-        self.storage.save()
+        models.storage.new(self)
+        models.storage.save()
 
     def to_dict(self, save_pw=None):
         """return the dictionary of the object"""

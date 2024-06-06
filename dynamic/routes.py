@@ -50,13 +50,14 @@ def register():
         storage.new(business)
 
         service = Service(name=form1.name.data,
-                          description=form1.description.data,
+                          description=form1.servicedescription.data,
                           business_id=business.id)
         storage.new(service)
 
         storage.save()
         flash('Account created successfully', 'success')
         return redirect(url_for('login'))
+
     return render_template('register.html', title='Register',
                            form=form, form1=form1)
 
@@ -73,8 +74,10 @@ def login():
             next_page = request.args.get('next')
             return redirect(next_page) if next_page\
                 else redirect(url_for('account'))
-        flash('Login Unsuccessful. Please check email and password', 'danger')
-    return render_template('login.html', form=form)
+        else:
+            flash('Login Unsuccessful. Please check email and password',
+                  'danger')
+    return render_template('login.html', form=form, title='Login')
 
 
 @app.route('/logout')
@@ -95,6 +98,13 @@ def save_picture(form_picture):
     i = Image.open(form_picture)
     i.thumbnail(output_size)
     i.save(picture_path)
+
+    # delete old profile picture
+    old_pic = os.path.join(app.root_path, 'static/profile_pics',
+                           current_user.profile_pic)
+    if os.path.exists(old_pic) and current_user.profile_pic != 'default.jpg':
+        os.remove(old_pic)
+
     return picture_fn
 
 
@@ -119,7 +129,7 @@ def account():
         form.email.data = current_user.email
         form.phone.data = current_user.phone
     profile_pic = url_for('static',
-                          filename='profile_pic/' + current_user.profile_pic)
+                          filename='profile_pics/' + current_user.profile_pic)
     return render_template('account.html', title='Account',
                            profile_pic=profile_pic, form=form)
 
