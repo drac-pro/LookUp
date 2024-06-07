@@ -1,44 +1,35 @@
 # LookUP
+![Logo](https://raw.githubusercontent.com/drac-pro/LookUp/main/dynamic/static/images/L.png)
+
+## Introduction
+
+Welcome to `LookUP`, a comprehensive Business Directory Web Application. LookUP is designed to empower business owners to register and manage their businesses efficiently while providing a platform for users to discover and connect with a wide array of services and businesses.
+
+
+## Application Overview
+
+**LookUP allows users to:
+
+- **Register as Business Users:** Sign up to manage and showcase your business.
+- **Manage Business Profiles:** Add, update, and maintain detailed business information
+- **Service Listings:** Businesses can provide detailed descriptions of their services
+- **Account Management:** Manage personal and business profiles, including profile pictures.
+- **View Business Listings:** Browse through all registered businesses and access detailed business profiles.
+
+## Users of LookUP
+
+1. Business Owners:
+
+* Sign Up and Login: Register and log in to manage business details.
+* Business Profile Management: Add and maintain detailed business information including name, description, address, and services.
+* Account Management: Update personal information and manage profile pictures.
+
+2. General Users:
+
+* Search for Businesses: Search for a businesses based on service offered and location
+* Browse Businesses: View a comprehensive list of all registered businesses.
+* Business Details: Access detailed profiles for each business including services offered.
 
 LookUp - Your Essential Services Locator
 Welcome to LookUp! LookUp is a mobile application designed to help users find essential services around them, such as hospitals, pharmacies, police stations, and more. Whether you’re a traveler in a new city or a local in need of immediate assistance, LookUp is here to guide you.
 
-Features
-Instant Access: Find essential services near you with just a few taps.
-Comprehensive Database: Access a wide range of services in various locations.
-User Reviews and Ratings: Read reviews and ratings to make informed decisions.
-Seamless Navigation: Get directions to your chosen service with integrated navigation.
-
-Installation
-For Android Users:
-Go to the Google Play Store.
-Search for "LookUp".
-Click "Install" to download and install the app on your device.
-For iOS Users:
-Go to the Apple App Store.
-Search for "LookUp".
-Click "Get" to download and install the app on your device.
-Usage
-Open the LookUp app on your mobile device.
-Use the search bar to enter the type of service you need (e.g., "pharmacy", "hospital").
-Browse through the list of nearby services.
-Select a service to view details, including address, contact information, and user reviews.
-Tap the "Navigate" button to get directions to the service using your preferred navigation app.
-Contributing
-We welcome contributions from the community! Here’s how you can help:
-
-Report Issues: If you encounter any bugs or issues, please report them on our GitHub Issues page.
-
-#Suggest Features: 
-Have an idea for a new feature? Let us know by creating a new issue or contacting us directly.
-
-#Submit Pull Requests: 
-If you’re a developer, feel free to fork the repository, make your changes, and submit a pull request.
-
-#Support
-If you need help or have any questions, please reach out to our support team at support@lookup.com.
-
-#License
-LookUp is licensed under the Holberton License. See the LICENSE file for more details.
-
-Thank you for using LookUp! We hope our app helps you find the essential services you need, wherever you are in Africa!
