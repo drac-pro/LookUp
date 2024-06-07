@@ -61,8 +61,8 @@ class BusinessForm(FlaskForm):
     state = StringField('State', validators=[DataRequired()])
     country = StringField('Country', validators=[DataRequired()])
     zip_code = StringField('Zip Code', validators=[DataRequired()])
-    services = StringField('Services (comma separated)',
-                           validators=[DataRequired()])
-    servicedescription = TextAreaField('Descript Your Service',
+    service_name = StringField('Service',
+                               validators=[DataRequired()])
+    servicedescription = TextAreaField('Describe Your Service',
                                        validators=[DataRequired()])
     submit = SubmitField('Create Business')

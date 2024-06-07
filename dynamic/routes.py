@@ -49,7 +49,7 @@ def register():
                             location_id=location.id)
         storage.new(business)
 
-        service = Service(name=form1.name.data,
+        service = Service(name=form1.service_name.data,
                           description=form1.servicedescription.data,
                           business_id=business.id)
         storage.new(service)
@@ -112,6 +112,7 @@ def save_picture(form_picture):
 @login_required
 def account():
     form = UpdateAccountForm()
+    businesses = current_user.businesses
     if form.validate_on_submit():
         if form.profile_pic.data:
             picture_file = save_picture(form.profile_pic.data)
@@ -131,7 +132,85 @@ def account():
     profile_pic = url_for('static',
                           filename='profile_pics/' + current_user.profile_pic)
     return render_template('account.html', title='Account',
-                           profile_pic=profile_pic, form=form)
+                           profile_pic=profile_pic, form=form,
+                           businesses=businesses)
+
+
+@app.route("/business/<string:business_id>", methods=['GET', 'POST'])
+@login_required
+def business(business_id):
+    business = storage.get(Business, business_id)
+    if not business or business.business_user_id != current_user.id:
+        abort(403)
+    location = storage.get(Location, business.location_id)
+    service = storage.get_service(business.id)
+
+    form = BusinessForm()
+
+    if form.validate_on_submit():
+        location.address = form.address.data
+        location.city = form.city.data
+        location.state = form.state.data
+        location.country = form.country.data
+        location.zip_code = form.zip_code.data
+        location.save()
+
+        business.name = form.name.data
+        business.description = form.description.data
+        business.save()
+
+        service.name = form.service_name.data
+        service.description = form.servicedescription.data
+        service.save()
+        flash('Business has been updated!', 'success')
+        return redirect(url_for('business', business_id=business.id))
+    elif request.method == 'GET':
+        form.name.data = business.name
+        form.description.data = business.description
+        form.address.data = location.address
+        form.city.data = location.city
+        form.state.data = location.state
+        form.country.data = location.country
+        form.zip_code.data = location.zip_code
+        form.service_name.data = service.name
+        form.servicedescription.data = service.description
+    profile_pic = url_for('static',
+                          filename='profile_pics/' + current_user.profile_pic)
+    return render_template('business.html', title='Business Details',
+                           form=form, business=business,
+                           profile_pic=profile_pic)
+
+
+@app.route("/register_business", methods=['GET', 'POST'])
+@login_required
+def register_business():
+    form = BusinessForm()
+    if form.validate_on_submit():
+        location = Location(address=form.address.data,
+                            city=form.city.data,
+                            state=form.state.data,
+                            country=form.country.data,
+                            zip_code=form.zip_code.data)
+        storage.new(location)
+
+        business = Business(name=form.name.data,
+                            description=form.description.data,
+                            business_user_id=current_user.id,
+                            location_id=location.id)
+        storage.new(business)
+
+        service = Service(name=form.service_name.data,
+                          description=form.servicedescription.data,
+                          business_id=business.id)
+        storage.new(service)
+
+        storage.save()
+        flash('Your business has been registered!', 'success')
+        return redirect(url_for('account'))
+    profile_pic = url_for('static',
+                          filename='profile_pics/' + current_user.profile_pic)
+    return render_template('register_business.html', title='Register Business',
+                           form=form, profile_pic=profile_pic)
 
 
 @app.teardown_appcontext
