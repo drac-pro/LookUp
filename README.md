@@ -8,7 +8,7 @@ Welcome to `LookUP`, a comprehensive Business Directory Web Application. LookUP 
 
 ## Application Overview
 
-**LookUP allows users to:
+__**LookUP allows users to:**
 
 - **Register as Business Users:** Sign up to manage and showcase your business.
 - **Manage Business Profiles:** Add, update, and maintain detailed business information
