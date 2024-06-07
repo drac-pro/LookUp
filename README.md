@@ -8,7 +8,7 @@ Welcome to `LookUP`, a comprehensive Business Directory Web Application. LookUP 
 
 ## Application Overview
 
-__**LookUP allows users to:**
+**LookUP allows users to:**
 
 - **Register as Business Users:** Sign up to manage and showcase your business.
 - **Manage Business Profiles:** Add, update, and maintain detailed business information
@@ -20,15 +20,15 @@ __**LookUP allows users to:**
 
 1. Business Owners:
 
-* Sign Up and Login: Register and log in to manage business details.
-* Business Profile Management: Add and maintain detailed business information including name, description, address, and services.
-* Account Management: Update personal information and manage profile pictures.
+	* Sign Up and Login: Register and log in to manage business details.
+	* Business Profile Management: Add and maintain detailed business information including name, description, address, and services.
+	* Account Management: Update personal information and manage profile pictures.
 
 2. General Users:
 
-* Search for Businesses: Search for a businesses based on service offered and location
-* Browse Businesses: View a comprehensive list of all registered businesses.
-* Business Details: Access detailed profiles for each business including services offered.
+	* Search for Businesses: Search for a businesses based on service offered and location
+	* Browse Businesses: View a comprehensive list of all registered businesses.
+	* Business Details: Access detailed profiles for each business including services offered.
 
 LookUp - Your Essential Services Locator
 Welcome to LookUp! LookUp is a mobile application designed to help users find essential services around them, such as hospitals, pharmacies, police stations, and more. Whether you’re a traveler in a new city or a local in need of immediate assistance, LookUp is here to guide you.
