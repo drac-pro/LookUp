@@ -5,6 +5,13 @@
 
 Welcome to `LookUP`, a comprehensive Business Directory Web Application. LookUP is designed to empower business owners to register and manage their businesses efficiently while providing a platform for users to discover and connect with a wide array of services and businesses.
 
+## The Team
+
+1. Darius Seivinyuy Tohtin
+
+2. Awugo Agabi Therese-Claire
+
+3. Emmanuel Francis
 
 ## Application Overview
 
@@ -15,6 +22,13 @@ Welcome to `LookUP`, a comprehensive Business Directory Web Application. LookUP 
 - **Service Listings:** Businesses can provide detailed descriptions of their services
 - **Account Management:** Manage personal and business profiles, including profile pictures.
 - **View Business Listings:** Browse through all registered businesses and access detailed business profiles.
+
+## Key Features
+- User Registration and Login: Secure sign-up and login functionality for business users.
+- Business Profile Management: Add and update business details like name, description, and address.
+- Service Listings: Showcase the services your business offers.
+- Personal Account Management: Update personal information and profile pictures.
+- Comprehensive Business Listings: Users can browse and access detailed business profiles.
 
 ## Users of LookUP
 
