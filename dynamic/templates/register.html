@@ -186,16 +186,16 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form1.services.label(class="form-control-label") }}
-                    {% if form1.services.errors %}
-                        {{ form1.services(class="form-control form-control-lg is-invalid") }}
+                    {{ form1.service_name.label(class="form-control-label") }}
+                    {% if form1.service_name.errors %}
+                        {{ form1.service_name(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
-                            {% for error in form1.services.errors %}
+                            {% for error in form1.service_name.errors %}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form1.services(class="form-control form-control-lg") }}
+                        {{ form1.service_name(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
                 <div class="form-group">
@@ -224,3 +224,12 @@
         </small>
     </div>
 {% endblock content %}
+{% block sidebar %}
+    <div class="content-section">
+        <h3>New Business User!</h3>
+        <p class='text-muted'>Please fill in the correct information before proceeding.</p></br>
+	 <h5><p>Put in your correct user details</p></h5></br>
+        <h5><p>A good business description can attract more customers.</p></h5></br>
+        <h5><p>Putting a precise location makes it easy for your Business to be located by potential customers</p></h5>
+    </div>
+{% endblock sidebar %}

@@ -71,10 +71,29 @@ class DBStorage:
 
     def get_user_by_email(self, email):
         """Get a user by their email"""
-        return self.__session.query(BusinessUser).filter_by(email=email).one_or_none()
+        return self.__session.query(BusinessUser).\
+            filter_by(email=email).one_or_none()
 
     def get_user_by_id(self, user_id):
         return self.__session.query(BusinessUser).get(user_id)
+
+    def get_service(self, business_id):
+        return self.__session.query(Service).\
+            filter_by(business_id=business_id).first()
+
+    def get(self, cls, id):
+        """retrieve one object based on the class and id
+
+        Args:
+            cls: Class of object
+            id: object id
+
+        Returns:
+            The object if found, otherwise None
+        """
+        if cls not in classes:
+            return None
+        return self.__session.query(cls).get(id)
 
     def count(self, cls=None):
         """count the number of objects in storage"""
