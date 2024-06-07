@@ -44,6 +44,18 @@ Welcome to `LookUP`, a comprehensive Business Directory Web Application. LookUP 
 	* Browse Businesses: View a comprehensive list of all registered businesses.
 	* Business Details: Access detailed profiles for each business including services offered.
 
+## Running LookUP Locally
+
+To run LookUp on your local environment, clone the repo and run this command in the root directory of the project
+
+***Command:*** ` LOOKUP_MYSQL_USER=lookup_dev LOOKUP_MYSQL_PWD=lookup_dev_pwd123 LOOKUP_MYSQL_HOST=localhost LOOKUP_MYSQL_DB=lookup_dev_db python3 run.py`
+
+***Both first we need to setup some few things***
+
+### Required Pakages and Dependencies
+__python__: `sudo apt update\nsudo apt install python3`
+
+
 LookUp - Your Essential Services Locator
 Welcome to LookUp! LookUp is a mobile application designed to help users find essential services around them, such as hospitals, pharmacies, police stations, and more. Whether you’re a traveler in a new city or a local in need of immediate assistance, LookUp is here to guide you.
 
