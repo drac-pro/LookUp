@@ -73,7 +73,9 @@ sudo pip3 install mysqlclient
 
 __Other python pakages run:__
 
-```sudo pip3 install -r requirements.txt```
+```
+sudo pip3 install -r requirements.txt
+```
 
 On the root directory of the project
 
@@ -86,7 +88,7 @@ sudo apt install mysql-server
 sudo service mysql start
 ```
 
-*After that run this to Create a user and database for LookUP
+*After that run this to Create a user and database for LookUP*
 
 ```
 cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
