@@ -99,6 +99,15 @@ cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
 You can run [This now](#running-lookup-locally)  
 
 
+## Helpful Resources 
+
+Here are some resources to help you understand the technologies used in LookUP:
+- Flask Documentation: [Flask](https://flask.palletsprojects.com/en/3.0.x/)
+- SQLAlchemy Documentation: [SQLAlchemy](https://docs.sqlalchemy.org/en/13/orm/tutorial.html)
+- bootstrap Documentation: [Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+- [Video](https://www.youtube.com/playlist?list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH)  
+
+
 ## License
 
 [MIT License](./LICENSE)
