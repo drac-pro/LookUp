@@ -101,13 +101,14 @@ You can run [This now](#running-lookup-locally)
 
 ## Key Components
 
-|Component|Description|
-|[base_model.py](./models/base_model.py)| A base class from which all other objects in our web app inherits from|
-|[db_storage.py](./models/engine/db_storage.py)| Creates a connection to the database and links the objects define in [models](./models) to the database|
-|[routes.py](./dynamic/routes.py)| contains our web aplication route and business logic|
-|[forms.py](./dynamic/forms.py)| Flask forms which are used by templates to collect, add, edit Business User info|
-|[layout.html](./dynamic/templates/layout.html)| The base template of all other template also contains important bootstrap links|
-|[run.py](./run.py)| Runs the entire application see [ Running LookUP Locally](#running-lookup-locally)|
+| Component | Description |
+|-----------|-------------|
+| [base_model.py](./models/base_model.py) | A base class from which all other objects in our web app inherits from |
+| [db_storage.py](./models/engine/db_storage.py) | Creates a connection to the database and links the objects define in [models](./models) to the database |
+| [routes.py](./dynamic/routes.py) | contains our web aplication route and business logic |
+| [forms.py](./dynamic/forms.py) | Flask forms which are used by templates to collect, add, edit Business User info |
+| [layout.html](./dynamic/templates/layout.html) | The base template of all other template also contains important bootstrap links |
+| [run.py](./run.py) | Runs the entire application see [ Running LookUP Locally](#running-lookup-locally) |
 
 ## Helpful Resources 
 
