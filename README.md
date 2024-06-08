@@ -3,8 +3,9 @@
 
 ## Introduction
 
-Welcome to `LookUP`, a comprehensive Business Directory Web Application. LookUP is designed to empower business owners to register and manage their businesses efficiently while providing a platform for users to discover and connect with a wide array of services and businesses. 
-This is a portfolio project at the end of fundation phase of ALX SE
+Welcome to `LookUP`, a comprehensive Business Directory Web Application. LookUP is designed to empower business owners to register and manage their businesses efficiently while providing a platform for users to discover and connect with a wide array of services and businesses.
+
+This is a portfolio project at the end of fundation phase of ALX SE.
 
 ## The Team
 
@@ -47,7 +48,7 @@ This is a portfolio project at the end of fundation phase of ALX SE
 
 ## Running LookUP Locally
 
-To run LookUp on your local environment, clone the repo and run this command in the root directory of the project
+To run LookUp on your local environment, clone the repo and run this command in the root directory of the project.
 
 ***Command:*** 
 ``` 
