@@ -96,4 +96,9 @@ cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
 ```
 [sql script](./setup_mysql_dev.sql)
 
-You can run [This now](#running-lookup-locally)
+You can run [This now](#running-lookup-locally)  
+
+
+## License
+
+[MIT License](./LICENSE)
