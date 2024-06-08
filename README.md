@@ -55,21 +55,24 @@ LOOKUP_MYSQL_USER=lookup_dev LOOKUP_MYSQL_PWD=lookup_dev_pwd123 LOOKUP_MYSQL_HOS
 ***Both first we need to setup some few things***
 
 ### Required Pakages and Dependencies
+
+
 __python and MySQLdb__:
+
 ```
 sudo apt update
 sudo apt install python3
 
+sudo apt-get install pkg-config
 sudo apt-get install python3-dev
 sudo apt-get install libmysqlclient-dev
 sudo apt-get install zlib1g-dev
 sudo pip3 install mysqlclient
 ```
 
-__Other python pakages run:__
+
+__Other python pakages run :__
+
 `sudo pip3 install -r requirements.txt`
 
-
-LookUp - Your Essential Services Locator
-Welcome to LookUp! LookUp is a mobile application designed to help users find essential services around them, such as hospitals, pharmacies, police stations, and more. Whether you’re a traveler in a new city or a local in need of immediate assistance, LookUp is here to guide you.
-
+On the root directory of the project
