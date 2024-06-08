@@ -76,6 +76,7 @@ __Other python pakages run:__
 ```
 sudo pip3 install -r requirements.txt
 ```
+[requirements.txt](./requirements)
 
 On the root directory of the project
 
@@ -91,7 +92,8 @@ sudo service mysql start
 *After that run this to Create a user and database for LookUP*
 
 ```
-cat [setup_mysql_dev.sql](./setup_mysql_dev.sql) | mysql -hlocalhost -uroot -p
+cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
 ```
+[setup_mysql_dev.sql](./setup_mysql_dev.sql)
 
 You can run [This now](#running-lookup-locally)
