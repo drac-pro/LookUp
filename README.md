@@ -73,6 +73,6 @@ sudo pip3 install mysqlclient
 
 __Other python pakages run :__
 
-`sudo pip3 install -r requirements.txt`
+```sudo pip3 install -r requirements.txt```
 
 On the root directory of the project
