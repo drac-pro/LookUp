@@ -91,7 +91,7 @@ sudo service mysql start
 *After that run this to Create a user and database for LookUP*
 
 ```
-cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
+cat [setup_mysql_dev.sql](./setup_mysql_dev.sql) | mysql -hlocalhost -uroot -p
 ```
 
 You can run [This now](#running-lookup-locally)
