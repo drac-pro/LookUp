@@ -93,3 +93,5 @@ sudo service mysql start
 ```
 cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
 ```
+
+You can run [This now](##running-lookup-locally)
