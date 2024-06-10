@@ -22,6 +22,23 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
+  color:#007bff; /* navbar edits start */
+}
+
+.navbar-brand {
+  max-height: 45px;
+} 
+
+.navbar-brand img{
+  vertical-align: top;
+  width: 125px;
+  height: 85px;
+  margin-top: -22px;
+  padding-right: 20px;
+}
+
+.navbar-nav {
+  margin-left: -60px; /* navbar edit ends */
 }
 
 .content-section {
@@ -31,6 +48,43 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
   margin-bottom: 20px;
 }
+
+/* home cards edits */
+.card {
+  border-radius: 10px; /* Adds rounded corners to the card */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for transform and box-shadow changes */
+}
+
+/* Hover effect for card elements */
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarges the card when hovered */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Adds a shadow effect to the card when hovered */
+}
+
+/* Style for card title text */
+.card-title {
+  color: #007bff; /* Sets the text color of the card title to a blue shade */
+}
+
+/* Style for card body elements */
+.card-body {
+  background-color: #ffffff; /* Sets the background color of the card body to white */
+  border-radius: 10px; /* Adds rounded corners to the card body */
+}
+
+h6 {
+  color: #17a2b8;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+ margin-bottom: 5px;
+}
+
+/* home cards edit ends */
 
 .article-title {
   color: #444444;
