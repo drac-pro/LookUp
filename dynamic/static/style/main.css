@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
-  color:#007bff;
+  color:#007bff; /* navbar edits start */
 }
 
 .navbar-brand {
@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-nav {
-  margin-left: -60px;
+  margin-left: -60px; /* navbar edit ends */
 }
 
 .content-section {
@@ -49,6 +49,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 
+/* home cards edits */
 .card {
   border-radius: 10px; /* Adds rounded corners to the card */
   transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for transform and box-shadow changes */
@@ -82,6 +83,8 @@ ul {
 ul li {
  margin-bottom: 5px;
 }
+
+/* home cards edit ends */
 
 .article-title {
   color: #444444;
