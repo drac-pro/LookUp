@@ -16,14 +16,19 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 
 @app.route('/')
-@app.route('/home')
+@app.route('/home', methods=['GET'])
 def home():
-    return render_template('home.html')
+    businesses = storage.all(Business)
+    image_url = url_for('static', filename='images/logo.png')
+
+    return render_template('home.html', image_url=image_url,
+                           businesses=businesses)
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     """register a new business user"""
+    image_url = url_for('static', filename='images/logo.png')
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = RegistrationForm()
@@ -59,11 +64,12 @@ def register():
         return redirect(url_for('login'))
 
     return render_template('register.html', title='Register',
-                           form=form, form1=form1)
+                           form=form, form1=form1, image_url=image_url)
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    image_url = url_for('static', filename='images/logo.png')
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     form = LoginForm()
@@ -77,7 +83,8 @@ def login():
         else:
             flash('Login Unsuccessful. Please check email and password',
                   'danger')
-    return render_template('login.html', form=form, title='Login')
+    return render_template('login.html', form=form, title='Login',
+                           image_url=image_url)
 
 
 @app.route('/logout')
@@ -111,6 +118,7 @@ def save_picture(form_picture):
 @app.route('/account', methods=['GET', 'POST'])
 @login_required
 def account():
+    image_url = url_for('static', filename='images/logo.png')
     form = UpdateAccountForm()
     businesses = current_user.businesses
     if form.validate_on_submit():
@@ -133,7 +141,7 @@ def account():
                           filename='profile_pics/' + current_user.profile_pic)
     return render_template('account.html', title='Account',
                            profile_pic=profile_pic, form=form,
-                           businesses=businesses)
+                           businesses=businesses, image_url=image_url)
 
 
 @app.route("/business/<string:business_id>", methods=['GET', 'POST'])
@@ -176,6 +184,7 @@ def business(business_id):
         form.servicedescription.data = service.description
     profile_pic = url_for('static',
                           filename='profile_pics/' + current_user.profile_pic)
+
     return render_template('business.html', title='Business Details',
                            form=form, business=business,
                            profile_pic=profile_pic)
@@ -184,6 +193,7 @@ def business(business_id):
 @app.route("/register_business", methods=['GET', 'POST'])
 @login_required
 def register_business():
+    image_url = url_for('static', filename='images/logo.png')
     form = BusinessForm()
     if form.validate_on_submit():
         location = Location(address=form.address.data,
@@ -210,7 +220,8 @@ def register_business():
     profile_pic = url_for('static',
                           filename='profile_pics/' + current_user.profile_pic)
     return render_template('register_business.html', title='Register Business',
-                           form=form, profile_pic=profile_pic)
+                           form=form, profile_pic=profile_pic,
+                           image_url=image_url)
 
 
 @app.teardown_appcontext
