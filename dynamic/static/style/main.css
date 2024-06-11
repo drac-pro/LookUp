@@ -132,3 +132,30 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+/* Style for background image  */
+.bg-image {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  margin-top: -20px;
+  padding: 0;
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .bg-mage {
+     object-fit: contain;
+     background-size: contain;
+  }
+}
+
+@media (max-width: 767px) {
+   .bg-image {
+      object-fit: contain;
+      background-size: contain;
+  }
+}

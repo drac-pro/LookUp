@@ -11,8 +11,29 @@ import secrets
 from PIL import Image
 from dynamic.forms import (RegistrationForm, LoginForm,
                            BusinessForm, UpdateAccountForm)
-from flask import render_template, redirect, url_for, flash, request
+from flask import (render_template, redirect, url_for, flash, request,
+                   make_response)
 from flask_login import login_user, login_required, logout_user, current_user
+
+
+@app.route('/')
+def index():
+    if request.cookies.get('has_seen_landing'):
+        return redirect(url_for('home'))
+    else:
+        return redirect(url_for('landing_page'))
+
+
+@app.route('/landing_page')
+def landing_page():
+    image_url = url_for('static', filename='images/logo.png')
+    bg_url = url_for('static', filename='images/LandingPage2.png')
+    response = make_response(render_template('landing_page.html',
+                                             title='Welcome!',
+                                             bg_url=bg_url,
+                                             image_url=image_url))
+    response.set_cookie('has_seen_landing', 'true', max_age=60*60*24*365)
+    return response
 
 
 @app.route('/')
