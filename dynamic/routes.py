@@ -184,10 +184,11 @@ def business(business_id):
         form.servicedescription.data = service.description
     profile_pic = url_for('static',
                           filename='profile_pics/' + current_user.profile_pic)
+    image_url = url_for('static', filename='images/logo.png')
 
     return render_template('business.html', title='Business Details',
                            form=form, business=business,
-                           profile_pic=profile_pic)
+                           profile_pic=profile_pic, image_url=image_url)
 
 
 @app.route("/register_business", methods=['GET', 'POST'])
