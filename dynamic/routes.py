@@ -18,6 +18,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 
 @app.route('/')
 def index():
+    """index page that redirects users to home page"""
     if request.cookies.get('has_seen_landing'):
         return redirect(url_for('home'))
     else:
@@ -26,6 +27,7 @@ def index():
 
 @app.route('/landing_page')
 def landing_page():
+    """landing page of the web app"""
     image_url = url_for('static', filename='images/logo.png')
     bg_url = url_for('static', filename='images/LandingPage2.png')
     response = make_response(render_template('landing_page.html',
@@ -39,6 +41,7 @@ def landing_page():
 @app.route('/')
 @app.route('/home', methods=['GET'])
 def home():
+    """route for the home page of the web app"""
     businesses = storage.all(Business)
     image_url = url_for('static', filename='images/logo.png')
 
@@ -90,6 +93,7 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """login to account as business user"""
     image_url = url_for('static', filename='images/logo.png')
     if current_user.is_authenticated:
         return redirect(url_for('home'))
@@ -111,6 +115,7 @@ def login():
 @app.route('/logout')
 @login_required
 def logout():
+    """logout from web application"""
     logout_user()
     return redirect(url_for('home'))
 
@@ -139,6 +144,7 @@ def save_picture(form_picture):
 @app.route('/account', methods=['GET', 'POST'])
 @login_required
 def account():
+    """logic for managing business user profile"""
     image_url = url_for('static', filename='images/logo.png')
     form = UpdateAccountForm()
     businesses = current_user.businesses
@@ -168,6 +174,7 @@ def account():
 @app.route("/business/<string:business_id>", methods=['GET', 'POST'])
 @login_required
 def business(business_id):
+    """logic to handle business details"""
     business = storage.get(Business, business_id)
     if not business or business.business_user_id != current_user.id:
         abort(403)
@@ -215,6 +222,7 @@ def business(business_id):
 @app.route("/register_business", methods=['GET', 'POST'])
 @login_required
 def register_business():
+    """logic to register new businesses to web application"""
     image_url = url_for('static', filename='images/logo.png')
     form = BusinessForm()
     if form.validate_on_submit():
@@ -248,4 +256,5 @@ def register_business():
 
 @app.teardown_appcontext
 def teardown_db(exception):
+    """close database connection to prevent resource leaks"""
     storage.close()
