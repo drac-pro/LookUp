@@ -11,6 +11,7 @@ from flask_login import current_user
 
 
 class RegistrationForm(FlaskForm):
+    """class for registration form"""
     email = StringField('Email', validators=[DataRequired(), Email()])
     first_name = StringField('First Name', validators=[DataRequired()])
     last_name = StringField('Last Name', validators=[DataRequired()])
@@ -30,6 +31,7 @@ class RegistrationForm(FlaskForm):
 
 
 class UpdateAccountForm(FlaskForm):
+    """form for updating business user accounts"""
     email = StringField('Email', validators=[DataRequired(), Email()])
     first_name = StringField('First Name', validators=[DataRequired()])
     last_name = StringField('Last Name', validators=[DataRequired()])
@@ -47,6 +49,7 @@ class UpdateAccountForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
+    """login form class"""
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
@@ -54,6 +57,7 @@ class LoginForm(FlaskForm):
 
 
 class BusinessForm(FlaskForm):
+    """form to register new business details of business users"""
     name = StringField('Business Name', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[DataRequired()])
     address = StringField('Address', validators=[DataRequired()])
