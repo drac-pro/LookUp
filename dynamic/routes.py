@@ -18,7 +18,8 @@ from flask_login import login_user, login_required, logout_user, current_user
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    businesses = storage.all(Business)
+    return render_template('home.html', businesses=businesses)
 
 
 @app.route('/register', methods=['GET', 'POST'])

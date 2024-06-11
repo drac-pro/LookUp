@@ -78,3 +78,54 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+/* home card styling */
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s; /* Smooth transition for scaling */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+.card-title {
+	color: #007bff;
+}
+
+.card-body {
+	background-color: #ffffff;
+	border-radius: 10px;
+}
+
+.list-group-item {
+	border: none;
+        background-color: #f8f9fa;
+}
+
+.list-group-item:hover {
+	background-color: #e9ecef;
+}
+
+.btn-primary {
+	background-color: #007bff;
+	border: none;
+}
+
+.btn-primary:hover {
+	background-color: #0056b3;
+}
+
+h6 {
+	color: #17a2b8;
+}
+
+ul {
+	padding-left: 20px;
+}
+
+ul li {
+	margin-bottom: 5px;
+}

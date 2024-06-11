@@ -1,15 +1,28 @@
 {% extends "layout.html" %}
 {% block content %}
-    {% for post in posts %}
-        <article class="media content-section">
-          <div class="media-body">
-            <div class="article-metadata">
-              <a class="mr-2" href="#">{{ post.author }}</a>
-              <small class="text-muted">{{ post.date_posted }}</small>
+    <h1 class="text-center mb-4">Businesses</h1>
+        <div class="row">
+            {% for business in businesses.values() %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{ business.name }}</h5>
+                        <p class="card-text">{{ business.description }}</p>
+                        <hr>
+                        <p><strong>Address:</strong> {{ business.location.address }}</p>
+                        <p><strong>City:</strong> {{ business.location.city }}</p>
+                        <p><strong>State:</strong> {{ business.location.state }}</p>
+                        <p><strong>Country:</strong> {{ business.location.country }}</p>
+                        <hr>
+                        <h6>Services Offered:</h6>
+                        <ul>
+                            {% for service in business.services %}
+                            <li>{{ service.name }}: {{ service.description }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-            <p class="article-content">{{ post.content }}</p>
-          </div>
-        </article>
-    {% endfor %}
+            {% endfor %}
+        </div>
 {% endblock content %}
