@@ -54,7 +54,7 @@ To run LookUp on your local environment, clone the repo and run this command in 
 ``` 
 LOOKUP_MYSQL_USER=lookup_dev LOOKUP_MYSQL_PWD=lookup_dev_pwd123 LOOKUP_MYSQL_HOST=localhost LOOKUP_MYSQL_DB=lookup_dev_db python3 run.py
 ```
-***Both first we need to setup some few things***
+***But first we need to setup a few things***
 
 ### Required Pakages and Dependencies
 
